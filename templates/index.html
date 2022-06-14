@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table>
+        <tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Total value</th>
+        </tr>
+        {% for symbol in symbols %}
+            <tr>
+                <td> {{ symbol[0] }} </td>
+                <td> {{ symbol[1] }} </td>
+                <td> {{ symbol[2] }} </td>
+                <td> {{ symbol[3] }} </td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td> {{ cash }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td> {{ total }}</td>
+        </tr>
+    </table>
+{% endblock %}
